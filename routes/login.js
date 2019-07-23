@@ -10,7 +10,7 @@ const Municipalidad = require('../models/municipalidad');
 router.post('/', (req, res) => {
     let body = req.body;
 
-    UsuarMunicipalidadio.findOne({ rut: body.rut }, (err, municipalidadDB) => {
+    Municipalidad.findOne({ rut: body.rut }, (err, municipalidadDB) => {
 
         if (err) {
             return res.json({
@@ -62,4 +62,4 @@ router.post('/', (req, res) => {
 
 
 
-module.exports = app;
+module.exports = router;

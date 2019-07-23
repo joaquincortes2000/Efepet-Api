@@ -1,4 +1,5 @@
 const moongoose = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
 
 
 
@@ -11,7 +12,8 @@ let MunicipalidadSchema = new Schema({
     },
     rut: {
         type: String,
-        require: true
+        require: true,
+        unique: true
     },
     password: {
         type: String,
@@ -30,5 +32,15 @@ let MunicipalidadSchema = new Schema({
         default: true
     }
 });
+
+propietarioSchema.methods.toJSON = function() {
+
+    let user = this;
+    let userObject = user.toObject();
+    delete userObject.password;
+
+    return userObject;
+
+}
 
 module.exports = moongoose.model('Municipalidad', MunicipalidadSchema);

@@ -12,15 +12,14 @@ let PerdidoSchema = new Schema({
         type: String,
         require: true
     },
-    imgRef: {
-        imgPerdido: {
-            type: String,
-            require: true,
-        },
-        imgZona: {
-            type: String,
-            require: false
-        }
+    imgPerdido: {
+        type: String,
+        require: true,
+    },
+    imgZona: {
+        type: String,
+        require: false
+
     },
     contacto: {
         telefono: {
